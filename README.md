@@ -6,7 +6,8 @@ for the people who have to act on them. Lately I've been building small automate
 that pull data from APIs, analyze it, and deliver a weekly answer instead of a one-off report.
 
 **Tools:** SQL (MySQL — CTEs, window functions) · Python (pandas, NumPy, SciPy, seaborn, Plotly, scikit-learn) ·
-Excel (pivot tables, slicers, dashboards) · Tableau · Streamlit · Google Analytics 4 API · SQLite · Google Sheets / Apps Script · Git
+Excel (pivot tables, slicers, dashboards) · Tableau · Streamlit · Google Analytics 4 API · SQLite · Google Sheets / Apps Script ·
+Data quality & testing (SQL checks, pytest, GitHub Actions CI) · Git
 
 ---
 
