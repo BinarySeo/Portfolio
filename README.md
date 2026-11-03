@@ -18,7 +18,7 @@ Data quality & testing (SQL checks, pytest, GitHub Actions CI) · Git
 | [ShopSignal — Etsy market & traffic analytics](#shopsignal--etsy-market--traffic-analytics) | What should a small shop change this week to get more traffic? | Python, GA4 API, SQLite, TF-IDF, Streamlit, LLM summaries |
 | [RFM Customer Segmentation](#rfm-customer-segmentation-sql) | Which customers should marketing target before the November peak? | SQL, CTEs, `NTILE` window functions, segmentation |
 | [E-Commerce Sales Dashboard](#e-commerce-sales-dashboard-excel) | How are sales, channels, returns and cancellations trending? | Excel data cleaning, pivot tables, slicers, dashboard design |
-| [World Happiness Report 2021](#world-happiness-report-2021-python) | Which factors move national happiness, and does it differ by region? | pandas, correlation & p-values, seaborn, choropleth maps |
+| [World Happiness Report 2021](#world-happiness-report-2021-python) | Which factors move national happiness, and who is happier than predicted? | pandas, correlation, multiple regression, bootstrap, seaborn |
 | [Survey Sampling & Campaign Analysis](#survey-sampling--email-campaign-analysis-sql--tableau) | Who should receive a pilot survey, and why did one email campaign outperform? | SQL sampling with `DENSE_RANK`, Tableau, CTR/conversion analysis |
 | [Case studies: production tools](#case-studies-production-data-tools) | Two internal tools in daily use (private code) | Data modeling, automation, testing |
 
@@ -64,13 +64,15 @@ added KRW → USD conversion, and built seven pivot analyses feeding one interac
 ---
 
 ## World Happiness Report 2021 (Python)
-**pandas · SciPy · seaborn · Plotly** — [View repo →](https://github.com/BinarySeo/Happiness-report)
+**pandas · SciPy (regression, bootstrap, ANOVA) · seaborn · Plotly** — [View repo →](https://github.com/BinarySeo/Happiness-report)
 
 <img src="https://raw.githubusercontent.com/BinarySeo/Happiness-report/main/img/Correlation.png" alt="Correlation and p-values of happiness factors" width="420">
 
 Which of the six factors behind the World Happiness Report's ladder score (149 countries) matter most, and do they differ by region and income?
 
 - GDP (r = 0.79), life expectancy (0.77) and social support (0.76) are the strongest correlates; generosity shows no significant relationship (p = 0.83).
+- A multiple regression on all six factors explains 76% of the variation, but 88% of that is shared between factors, so wealth, health and support act as a bundle; freedom matters most on its own.
+- Comparing actual with predicted scores, Latin America and Western Europe are significantly happier than their circumstances predict.
 - Among the 20 happiest countries, **freedom** (0.73) and **perceived corruption** (−0.65) matter more than GDP.
 - Region-by-region heatmaps: social support stands out in Asia, healthy life expectancy in the Americas.
 
